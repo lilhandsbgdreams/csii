@@ -1,0 +1,51 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+
+    <form>
+
+        <div style="text-align:right">
+            <h5 style="font-weight: bold">
+            GENERAL INFORMATION
+            </h5>
+        </div>
+
+        <label for="name">Name</label>
+        <input class="form-control" id="name" type="text"/>
+
+        <label for="occupation">Occupation</label>
+        <input class="form-control" id="occupation" type="text"/>
+
+        <label for="education">Education</label>
+        <input class="form-control" id="education" type="text"/>
+
+        <label for="languages">Languages</label>
+        <input class="form-control" id="languages" type="text"/>
+
+        <label for="address">Address</label>
+        <input class="form-control" id="address" type="text"/>
+
+        <label for="phone">Phone</label>
+        <input class="form-control" id="phone" type="text"/>
+
+        <label for="email">Email</label>
+        <input class="form-control" id="email" type="email"/>
+
+        <label for="days">Days available for meeting</label>
+        <input class="form-control" id="days" type="number"/>
+
+        <div style="text-align:right">
+            <h5 style="font-weight: bold">
+            PLEASE CHOOSE A POINT IN THE PROJECT AND COMMENT
+            </h5>
+        </div>
+
+        <label for="comment">Comment</label>
+        <textarea class="form-control" id="comment"></textarea>
+
+        <button type="submit"
+                style="margin-top: 3em"
+                class="form-control"
+                ng-disabled="true">Submit</button>
+    </form>
+</div>

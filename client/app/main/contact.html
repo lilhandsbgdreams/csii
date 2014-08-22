@@ -1,0 +1,23 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+
+    <form>
+        <label for="name">Name</label>
+        <input class="form-control" id="name" type="text"/>
+
+        <label for="email">Email</label>
+        <input class="form-control" id="email" type="email"/>
+
+        <label for="subject">Subject</label>
+        <input class="form-control" id="subject" type="text"/>
+
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message"></textarea>
+
+        <button type="submit"
+                style="margin-top: 3em"
+                class="form-control"
+                ng-disabled="true">Submit</button>
+    </form>
+</div>

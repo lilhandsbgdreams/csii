@@ -6,8 +6,24 @@ angular.module 'csiiApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'pascalprecht.translate'
 ]
+
+.config ($translateProvider) ->
+  $translateProvider
+  .translations('en', {
+    CSII: 'The Circle of Studies of Idea and Ideology',
+    BUTTON_TEXT_EN: 'english',
+    BUTTON_TEXT_PT: 'portuguese'
+  }).translations('pt', {
+    CSII: 'Círculo de Estudos da Ideia e da Ideologia',
+    BUTTON_TEXT_EN: 'inglês',
+    BUTTON_TEXT_PT: 'português'
+  });
+  $translateProvider.determinePreferredLanguage();
+  $translateProvider.fallbackLanguage('en');
+
 .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
   $urlRouterProvider
   .otherwise '/'
