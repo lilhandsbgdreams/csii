@@ -7,7 +7,8 @@ angular.module 'csiiApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'multi-select'
 ]
 
 .config ($translateProvider) ->

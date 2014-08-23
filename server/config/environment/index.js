@@ -26,11 +26,11 @@ var all = {
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'csii-secret'
+    session: 'zizek-badiou-ranciere-agamben'
   },
 
   // List of user roles
-  userRoles: ['guest', 'user', 'admin'],
+  userRoles: ['guest', 'member', 'gs', 'plus-one'],
 
   // MongoDB connection options
   mongo: {
@@ -39,7 +39,7 @@ var all = {
         safe: true
       }
     }
-  },
+  }
 
 };
 

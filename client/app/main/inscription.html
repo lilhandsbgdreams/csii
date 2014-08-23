@@ -1,51 +1,77 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-
     <form>
-
-        <div style="text-align:right">
+        <div style="text-align:center">
             <h5 style="font-weight: bold">
             GENERAL INFORMATION
             </h5>
         </div>
 
         <label for="name">Name</label>
-        <input class="form-control" id="name" type="text"/>
+        <input ng-model="formData.name" class="form-control" id="name" type="text"/>
 
         <label for="occupation">Occupation</label>
-        <input class="form-control" id="occupation" type="text"/>
+        <input ng-model="formData.occupation" class="form-control" id="occupation" type="text"/>
 
-        <label for="education">Education</label>
-        <input class="form-control" id="education" type="text"/>
+        <label for="education">Highest Level of Education</label>
+        <input ng-model="formData.education" class="form-control" id="education" type="text"/>
 
-        <label for="languages">Languages</label>
-        <input class="form-control" id="languages" type="text"/>
-
-        <label for="address">Address</label>
-        <input class="form-control" id="address" type="text"/>
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="languages">Languages</label>
+                <div class="input-group">
+                    <input ng-model="lingua.name" class="form-control" id="languages" type="text"/>
+                    <span class="input-group-btn">
+                        <button type="button"
+                                class="btn btn-default"
+                                ng-click="formAddLanguage(lingua)"
+                                ng-disabled="!lingua">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </span>
+                </div>
+                <span style="margin-top: 1em; text-decoration: underline"
+                      ng-repeat="lang in formData.languages">{{lang.name}}
+                    <i class="fa fa-times"
+                       style="color:red"
+                       ng-click="formDeleteLanguage(lang)"></i>
+                </span>
+            </div>
+            <div class="col-xs-6">
+                <label for="address">Address</label>
+                <textarea ng-model="formData.address" class="form-control" id="address" rows="3"></textarea>
+            </div>
+        </div>
 
         <label for="phone">Phone</label>
-        <input class="form-control" id="phone" type="text"/>
+        <input ng-model="formData.phone" class="form-control" id="phone" type="text"/>
 
         <label for="email">Email</label>
-        <input class="form-control" id="email" type="email"/>
+        <input ng-model="formData.email" class="form-control" id="email" type="email"/>
 
         <label for="days">Days available for meeting</label>
-        <input class="form-control" id="days" type="number"/>
+        <div   id="days"
+                multi-select
+                input-model="daysAvailable"
+                button-label="name"
+                item-label="name"
+                tick-property="ticked"
+                ></div>
 
-        <div style="text-align:right">
+        <div style="text-align:center">
             <h5 style="font-weight: bold">
-            PLEASE CHOOSE A POINT IN THE PROJECT AND COMMENT
+                PLEASE CHOOSE ONE ASPECT OF THE CSII PROJECT AND COMMENT ON IT
             </h5>
         </div>
 
         <label for="comment">Comment</label>
-        <textarea class="form-control" id="comment"></textarea>
+        <textarea ng-model="formData.comment" class="form-control" id="comment" rows="4"></textarea>
 
         <button type="submit"
                 style="margin-top: 3em"
                 class="form-control"
+                ng-click="submitForm(formData)"
                 ng-disabled="true">Submit</button>
     </form>
 </div>
