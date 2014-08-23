@@ -517,7 +517,7 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.client %>/index.html': [
             '<%= yeoman.client %>/{app,components}/**/*.css',
-            '<%= yeoman.client %>/{bower_components}/angular-multi-select/*.css'
+//            '<%= yeoman.client %>/{bower_components}/angular-multi-select/*.css'
           ]
         }
       }
