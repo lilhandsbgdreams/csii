@@ -399,10 +399,10 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'coffee',
+        'coffee'
       ],
       test: [
-        'coffee',
+        'coffee'
       ],
       debug: {
         tasks: [
@@ -516,11 +516,12 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/index.html': [
-            '<%= yeoman.client %>/{app,components}/**/*.css'
+            '<%= yeoman.client %>/{app,components}/**/*.css',
+            '<%= yeoman.client %>/{bower_components}/angular-multi-select/*.css'
           ]
         }
       }
-    },
+    }
   });
 
   // Used for delaying livereload until after server has restarted
