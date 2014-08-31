@@ -49,5 +49,3 @@ angular.module 'csiiApp'
 
     d3.selectAll 'g.arc > path'
       .each arcTween
-
-

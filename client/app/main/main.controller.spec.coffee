@@ -23,5 +23,12 @@ describe 'Controller: MainCtrl', ->
     MainCtrl = $controller 'MainCtrl',
       $scope: scope
 
-  it 'should agree that 1 = 1', ->
-    expect(1).toBe 1
+  it 'should contain 7 days in the week', ->
+    expect(scope.daysAvailable.length).toBe 7
+
+  it 'should add and remove languages', ->
+    scope.formAddLanguage({name: 'English'})
+    scope.formAddLanguage({name: 'Russian'})
+    scope.formAddLanguage({name: 'Chinese'})
+    scope.formDeleteLanguage({name: 'Russian'})
+    expect(scope.formData.languages.length).toBe(2)

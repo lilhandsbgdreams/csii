@@ -13,15 +13,15 @@ angular.module 'csiiApp', [
 
 .config ($translateProvider) ->
   $translateProvider
-  .translations('en', {
+  .translations('en',
     CSII: 'The Circle of Studies of Idea and Ideology',
     BUTTON_TEXT_EN: 'english',
     BUTTON_TEXT_PT: 'portuguese'
-  }).translations('pt', {
+  ).translations('pt',
     CSII: 'Círculo de Estudos da Ideia e da Ideologia',
     BUTTON_TEXT_EN: 'inglês',
     BUTTON_TEXT_PT: 'português'
-  });
+  );
   $translateProvider.determinePreferredLanguage();
   $translateProvider.fallbackLanguage('en');
 

@@ -1,14 +1,14 @@
 'use strict'
 
 angular.module 'csiiApp'
-.controller 'MainCtrl', ($scope, $http, socket, $translate) ->
+.controller 'MainCtrl', ($scope, socket, $translate, CSII) ->
 
-  ###
-  $scope.languages = [
-    { id: 'BUTTON_TEXT_PT', code: 'pt' },
-    { id: 'BUTTON_TEXT_EN', code: 'en' }
-  ]
-  ###
+  data = CSII.getCellData()
+
+  console.log 'cells:', data
+
+  CSII.getBookData('0804744718')
+    .then (response) -> console.log response
 
   $scope.formData = { languages: [] }
 
@@ -22,9 +22,7 @@ angular.module 'csiiApp'
     { name: 'Saturday', ticked: false }
   ];
 
-  $scope.circlePercent = [
-    { value: 1 },
-  ]
+  $scope.circlePercent = { value: 1 }
 
   $scope.formAddLanguage = (lang) ->
     $scope.formData.languages.push(lang)
@@ -34,27 +32,5 @@ angular.module 'csiiApp'
     i = $scope.formData.languages.indexOf(lang)
     $scope.formData.languages.splice(i,1)
 
-
   $scope.changeLanguage = (code) ->
     $translate.use code
-
-###
-
-  $scope.awesomeThings = []
-
-  $http.get('/api/things').success (awesomeThings) ->
-    $scope.awesomeThings = awesomeThings
-    socket.syncUpdates 'thing', $scope.awesomeThings
-
-  $scope.addThing = ->
-    return if $scope.newThing is ''
-    $http.post '/api/things',
-      name: $scope.newThing
-
-    $scope.newThing = ''
-
-  $scope.deleteThing = (thing) ->
-    $http.delete '/api/things/' + thing._id
-
-  $scope.$on '$destroy', ->
-    socket.unsyncUpdates 'thing'###
