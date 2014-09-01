@@ -1,14 +1,30 @@
-<div style="border:solid thin; padding: 1em">
-    <h3>{{cellName}}</h3>
-    <div class="row">
-        <book-progress data="cellBookProgress"></book-progress>
+<div class="cell-box" style="border: solid thin; padding: .5em">
+
+    <div class="row" style="text-align:center">
+        <span style="font-size: 2em;">{{cellData.name}}</span>
     </div>
+
+    <div class="row">
+        <div class="col-md-12" style="font-weight: bold;">
+            <span style="color: red">NEXT MEETING: </span>{{cellData.nextMeeting}} <br/>
+            <!--<span style="color: red">NEWS: </span>{{cellData.news}} <br/>-->
+            <span style="color: red">READING: </span>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-6">
-            <img ng-src="{{bookLink}}" alt=""/>
+            <img ng-src="{{book.imageLink}}" alt=""/>
         </div>
         <div class="col-md-6">
-            <span>{{latestNews}}</span>
+            <b>{{book.name}}</b> / <b>{{book.authors[0]}}</b> / <b>{{book.publisher}}</b>
         </div>
+        <!--<div class="col-md-6">-->
+            <!---->
+        <!--</div>-->
+        <!--<div class="col-md-6">-->
+            <!--<book-progress data="cellData.progress" format="format"></book-progress>-->
+        <!--</div>-->
     </div>
+
 </div>

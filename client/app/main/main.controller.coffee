@@ -1,14 +1,13 @@
 'use strict'
 
 angular.module 'csiiApp'
-.controller 'MainCtrl', ($scope, socket, $translate, CSII) ->
+.controller 'MainCtrl', ($scope, socket, $translate, CSIIFactory) ->
 
-  data = CSII.getCellData()
+  $scope.cells = CSIIFactory.getCellData()
 
-  console.log 'cells:', data
-
-  CSII.getBookData('0804744718')
-    .then (response) -> console.log response
+  $scope.cellFormat =
+    width: 100
+    height: 100
 
   $scope.formData = { languages: [] }
 
@@ -22,7 +21,9 @@ angular.module 'csiiApp'
     { name: 'Saturday', ticked: false }
   ];
 
-  $scope.circlePercent = { value: 1 }
+  $scope.circlePercent = [
+    value: 1
+  ]
 
   $scope.formAddLanguage = (lang) ->
     $scope.formData.languages.push(lang)
