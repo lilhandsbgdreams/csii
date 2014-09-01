@@ -5,12 +5,13 @@ angular.module 'csiiApp'
   restrict: 'E',
   scope:
     data: "="
+    format: "="
   link: (scope, element, attrs) ->
 
-    width = 300
-    height = 300
+    width = if scope.format then scope.format.width else 300
+    height = if scope.format then scope.format.height else 300
+
     radius = Math.min(width, height) / 2;
-    pi = Math.PI
 
     tweenArc = (b) ->
       (a) ->
@@ -22,7 +23,7 @@ angular.module 'csiiApp'
     arcTween = () ->
       d3.select this
         .transition()
-        .duration 3000
+        .duration 2500
         .attrTween 'd', tweenArc { value: 0 }
 
     arc = d3.svg.arc()
@@ -47,5 +48,5 @@ angular.module 'csiiApp'
       .style 'fill', '#FF0100'
       .attr 'd', arc
 
-    d3.selectAll 'g.arc > path'
+    g.selectAll 'path'
       .each arcTween

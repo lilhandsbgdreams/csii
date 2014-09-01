@@ -1,21 +1,21 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="container-fluid" style="width:50%">
 
   <div class="row" style="text-align:center; margin-top: 20%">
-      <div class="col-md-6">
+      <div class="col-md-offset-2 col-md-4">
           <book-progress data="circlePercent"></book-progress>
       </div>
       <div class="col-md-6">
-          <p style="font-size: 4em; cursor: default" translate="CSII"></p>
+          <p style="font-size: 2em; cursor: default" translate="CSII"></p>
       </div>
   </div>
 
-  <div>
-    <span ng-repeat="cell in cells">
-        <display-status info="cell">
-        </display-status>
-    </span>
+  <div class="row">
+    <div class="col-md-4" ng-repeat="cell in cells">
+        <display-cell cell-data="cell" format="cellFormat">
+        </display-cell>
+    </div>
   </div>
 
 </div>

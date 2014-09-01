@@ -7,8 +7,8 @@ describe 'Service: csii', ->
 
   # instantiate service
   csii = undefined
-  beforeEach inject (_csii_) ->
-    csii = _csii_
+  beforeEach inject (_csiiFactory_) ->
+    csii = _csiiFactory_
 
   it 'should do something', ->
     expect(!!csii).toBe true
