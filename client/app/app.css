@@ -19,6 +19,10 @@
  * App-wide Styles
  */
 
+body {
+    background-image: url('../assets/images/pixel_weave.png');
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;

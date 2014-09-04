@@ -2,10 +2,13 @@
     -webkit-box-shadow: 10px 10px 15px -4px rgba(0,0,0,0.65);
     -moz-box-shadow: 10px 10px 15px -4px rgba(0,0,0,0.65);
     box-shadow: 10px 10px 15px -4px rgba(0,0,0,0.65);
+
+    height: 20em;
+    margin: 2em;
+    background-color: white;
 }
 
+
 .cell-box :hover {
-    background-color: #000000;
-    color: #ffffff;
     cursor: pointer;
 }

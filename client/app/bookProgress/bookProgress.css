@@ -6,3 +6,8 @@
 .csiiLink:hover{
     text-decoration: underline;
 }
+
+.centered {
+    margin: 0 auto;
+    float: none;
+}

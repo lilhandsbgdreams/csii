@@ -14,11 +14,27 @@ angular.module 'csiiApp', [
 .config ($translateProvider) ->
   $translateProvider
   .translations('en',
+    LANGUAGE: 'English'
     CSII: 'The Circle of Studies of Idea and Ideology',
+    CSII_BRAND: 'CSII',
+    HOME: 'Home',
+    TEXT: 'Texts',
+    CONTACT: 'Contact',
+    OPERATIONS: 'Operations',
+    INSCRIPTION: 'Inscription',
+    PROJECT: 'Project',
     BUTTON_TEXT_EN: 'english',
     BUTTON_TEXT_PT: 'portuguese'
   ).translations('pt',
+    LANGUAGE: 'Português',
     CSII: 'Círculo de Estudos da Ideia e da Ideologia',
+    CSII_BRAND: 'CEII',
+    HOME: 'Home',
+    TEXT: 'Textos',
+    CONTACT: 'Contato',
+    OPERATIONS: 'Funcionamento',
+    INSCRIPTION: 'Inscrição',
+    PROJECT: 'Projeto',
     BUTTON_TEXT_EN: 'inglês',
     BUTTON_TEXT_PT: 'português'
   );

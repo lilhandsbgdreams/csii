@@ -33,4 +33,7 @@ angular.module 'csiiApp'
     ]
 
   getBookData: (isbn) ->
-    $http.get '/api/books/' + isbn
+    $http
+      method: 'GET'
+      url: '/api/books/' + isbn
+      cache: true

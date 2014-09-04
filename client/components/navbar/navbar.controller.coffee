@@ -6,26 +6,32 @@ angular.module 'csiiApp'
     {
       title: 'Home'
       link: '/'
+      translation: 'HOME'
     },
     {
       title: 'Texts'
       link: '/texts'
+      translation: 'TEXT'
     },
     {
       title: 'Operations'
       link: '/operations'
+      translation: 'OPERATIONS'
     },
     {
       title: 'Project'
       link:'/project'
+      translation: 'PROJECT'
     },
     {
       title: 'Inscription'
       link:'/inscription'
+      translation: 'INSCRIPTION'
     },
     {
       title: 'Contact'
       link: '/contact'
+      translation: 'CONTACT'
     }
   ]
   $scope.isCollapsed = true

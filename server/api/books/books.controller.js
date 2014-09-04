@@ -2,30 +2,27 @@
 
 var _ = require('lodash');
 var config = require('../../config/environment');
-var https = require('https');
+var request = require('request');
 
 // Get a single books
 exports.show = function(req, res) {
 
     var options = {
-      host: 'www.googleapis.com',
-      path: '/books/v1/volumes?q=ISBN=' + req.params.isbn
+        proxy: process.env.QUOTAGUARDSTATIC_URL,
+        url: 'https://www.googleapis.com/books/v1/volumes?q=ISBN=' + req.params.isbn + '&key=' + process.env.GOOGLEBOOKS_KEY,
+        headers: {
+            'User-Agent': 'node.js'
+        }
     };
 
-    var callback = function(response) {
-      var books = '';
+    var callback = function(err, response, body) {
 
-      //another chunk of data has been recieved, so append it to `str`
-      response.on('data', function (chunk) {
-          books += chunk;
-      });
+        if (err) console.log(err);
 
-      response.on('end', function () {
-          res.json(JSON.parse(books));
-      });
+        return body;
     };
 
-    https.request(options, callback).end();
+    req.pipe(request(options, callback)).pipe(res);
 };
 
 function handleError(res, err) {
